@@ -1,0 +1,25 @@
+@use '../abstract/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin-inline: auto;
+
+  & > * {
+    max-width: 100%;
+  }
+
+  & > main {
+    margin-block: auto;
+  }
+
+  & > :first-child:not(main) {
+    margin-block-start: 0;
+  }
+
+  & > :last-child:not(main) {
+    margin-block-end: 0;
+  }
+}

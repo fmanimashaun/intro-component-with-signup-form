@@ -1,0 +1,19 @@
+@use '../abstract/variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  // Font Size (Base set to 16px for easy scaling)
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $neutral-pale-blue;
+}
