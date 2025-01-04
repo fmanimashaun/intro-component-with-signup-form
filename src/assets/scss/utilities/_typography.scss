@@ -1,22 +1,46 @@
 @use '../abstract/variables' as *;
 
-// Loop through the map to generate utility classes with the new names
+// Generate font-weight utility classes with responsive variants
 @each $weight, $value in $font-weights {
 	.text-#{$weight} {
 		font-weight: #{$value};
 	}
+
+	@each $breakpoint, $breakpoint-value in $breakpoints {
+		@media screen and (min-width: #{$breakpoint-value}) {
+			@at-root .#{$breakpoint}:text-#{$weight} {
+				font-weight: #{$value};
+			}
+		}
+	}
 }
 
-// Loop through the map to generate font-style utility classes
+// Generate font-style utility classes with responsive variants
 @each $style, $value in $font-styles {
 	.text-#{$style} {
 		font-style: #{$value};
 	}
+
+	@each $breakpoint, $breakpoint-value in $breakpoints {
+		@media screen and (min-width: #{$breakpoint-value}) {
+			@at-root .#{$breakpoint}:text-#{$style} {
+				font-style: #{$value};
+			}
+		}
+	}
 }
 
-// Loop through the map to generate text-align utility classes
+// Generate text-align utility classes with responsive variants
 @each $align, $value in $text-aligns {
 	.text-#{$align} {
 		text-align: #{$value};
+	}
+
+	@each $breakpoint, $breakpoint-value in $breakpoints {
+		@media screen and (min-width: #{$breakpoint-value}) {
+			@at-root .#{$breakpoint}:text-#{$align} {
+				text-align: #{$value};
+			}
+		}
 	}
 }

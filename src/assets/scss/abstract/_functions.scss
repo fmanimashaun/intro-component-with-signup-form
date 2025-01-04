@@ -1,6 +1,7 @@
 @use './variables' as *;
+@use 'sass:map';
 
 // Define the clr function
 @function clr($color, $shade) {
-    @return map-get(map-get($colors, $color), $shade);
+    @return map.get(map.get($colors, $color), $shade);
   }

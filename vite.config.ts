@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import path from 'path';
+import htmlPurge from 'vite-plugin-purgecss'
 
 export default defineConfig({
   base: '/intro-component-with-signup-form/',
@@ -8,6 +9,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  plugins: [
+    htmlPurge(),
+  ],
   build: {
     rollupOptions: {
       output: {

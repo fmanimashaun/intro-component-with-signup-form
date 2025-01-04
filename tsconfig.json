@@ -19,6 +19,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     // "noUncheckedSideEffectImports": true
+
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
   "include": ["src"]
 }
