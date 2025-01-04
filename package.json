@@ -1,9 +1,9 @@
 {
-  "name": "results-summary-component",
+  "name": "intro-component-with-signup-form",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/fmanimashaun/results-summary-component",
+  "homepage": "https://github.com/fmanimashaun/intro-component-with-signup-form",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
