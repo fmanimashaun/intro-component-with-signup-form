@@ -1,0 +1,39 @@
+$colors: (
+  "red": (
+    400: hsl(0, 100%, 74%)
+  ),
+  "green": (
+    400: hsl(154, 59%, 51%)
+  ),
+  "blue": (
+    300: hsl(246, 25%, 77%), 
+    400: hsl(248, 32%, 49%), 
+    500: hsl(249, 10%, 26%)
+  ),
+  "light": (
+    400: hsl(0, 0%, 100%),
+  ),
+  "gray": (
+    500: hsl(248,9%, 26%),
+  ),
+);
+
+// typography
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700
+);
+
+$font-styles: (
+  "normal": normal,
+  "italic": italic
+);
+
+$text-aligns: (
+  "left": left,
+  "center": center,
+  "right": right,
+  "justify": justify
+);

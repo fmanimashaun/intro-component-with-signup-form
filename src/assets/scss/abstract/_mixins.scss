@@ -1,2 +1,8 @@
 @use './variables' as *;
+@use './functions' as *;
 @use 'sass:color';
+
+// Mixin to blend with white at 100% (this will just give the original color)
+@mixin white-mix($color) {
+	background-color: color.mix($color, #ffffff, 100%);
+}

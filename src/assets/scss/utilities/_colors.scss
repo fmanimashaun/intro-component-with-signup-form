@@ -1,0 +1,13 @@
+@use '../abstract/variables' as *;
+
+// Generate utility classes for text and background colors
+@each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      .text-#{$color}-#{$shade} {
+        color: #{$value};
+      }
+      .bg-#{$color}-#{$shade} {
+        background-color: #{$value};
+      }
+    }
+  }

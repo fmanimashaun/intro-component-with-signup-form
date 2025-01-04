@@ -1,0 +1,20 @@
+// Loop through the map to generate utility classes with the new names
+@each $weight, $value in $font-weights {
+	.text-#{$weight} {
+		font-weight: #{$value};
+	}
+}
+
+// Loop through the map to generate font-style utility classes
+@each $style, $value in $font-styles {
+	.text-#{$style} {
+		font-style: #{$value};
+	}
+}
+
+// Loop through the map to generate text-align utility classes
+@each $align, $value in $text-aligns {
+	.text-#{$align} {
+		text-align: #{$value};
+	}
+}
