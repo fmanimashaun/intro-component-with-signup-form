@@ -1,3 +1,5 @@
+@use '../abstract/variables' as *;
+
 // Loop through the map to generate utility classes with the new names
 @each $weight, $value in $font-weights {
 	.text-#{$weight} {
