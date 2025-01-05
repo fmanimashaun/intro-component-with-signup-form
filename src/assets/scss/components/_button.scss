@@ -1,0 +1,19 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+@use '../abstract/placeholder';
+@use '../abstract/functions' as *;
+
+.btn {
+    @extend %btn-text;
+    color: clr('light', 100);
+    background-color: clr('green', 400);
+    border: none;
+    border-radius: $border-radius-2;
+    box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.1);
+    padding: 15px 43px;
+    cursor: pointer;
+
+    &:hover {
+        @include white-mix(clr('green', 300));
+    }
+}

@@ -1,4 +1,6 @@
 @use '../abstract/variables' as *;
+@use '../abstract/functions' as *;
+@use '../abstract/placeholder';
 
 *,
 *::before,
@@ -24,4 +26,9 @@ body {
     background-position: center top;
     background-size: auto 100%;
   }
+}
+
+.error-message {
+  @extend %error;
+  color: clr('red', 400);
 }

@@ -1,10 +1,11 @@
 @use '../abstract/variables' as *;
 @use '../abstract/mixins' as *;
 @use '../abstract/placeholder';
+@use '../abstract/functions' as *;
 
 
 .card {
 	display: flex;
 	padding: $card-padding;
-	border-radius: $card-border-radius;
+	border-radius: $border-radius-1;
 }

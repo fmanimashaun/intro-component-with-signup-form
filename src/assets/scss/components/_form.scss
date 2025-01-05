@@ -1,0 +1,52 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+@use '../abstract/placeholder';
+@use '../abstract/functions' as *;
+
+.form {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+
+	&-field {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		gap: 6px;
+
+		&:has(input:user-invalid)::after {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			content: '!';
+			top: calc(50% - 23px);
+			right: 27px;
+			width: 1.5rem;
+			height: 1.5rem;
+			background-color: clr('red', 400);
+			color: clr('light', 100);
+			border-radius: 50%;
+		}
+	}
+
+	input {
+		@extend %form-input;
+		width: 100%;
+		padding: 20px 15px;
+		border-radius: $border-radius-2;
+		border: 1px solid #DEDEDE;
+
+		&:user-invalid {
+			border: 2px solid clr('red', 400);
+			color: clr('red', 400);
+
+			&::placeholder {
+				color: clr('light', 100);
+			}
+		}
+	}
+}
