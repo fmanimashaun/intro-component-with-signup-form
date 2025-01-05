@@ -70,7 +70,11 @@
 			padding-block: 1.125rem;
 			padding-inline: 4rem;
 			border-radius: $border-radius-1;
-			box-shadow: 0 0.5rem 0 rgba(clr("gray", 500), 0.15) ;
+			box-shadow: 0 0.5rem 0 rgba(clr("gray", 500), 0.15);
+
+			@media screen and (min-width: 1024px) {
+				padding-block: 1.0625rem;
+			}
 
 			h2 {
 				@extend %heading-2;

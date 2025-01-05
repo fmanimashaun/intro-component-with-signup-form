@@ -15,30 +15,37 @@
 		display: flex;
 		flex-direction: column;
 		align-items: end;
-		gap: 6px;
 
-		&.invalid::after {
-			position: absolute;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			content: '!';
-			top: calc(50% - 23px);
-			right: 27px;
-			width: 1.5rem;
-			height: 1.5rem;
-			background-color: clr('red', 400);
-			color: clr('light', 100);
-			border-radius: 50%;
+		&.invalid {
+			gap: 6px;
+
+			&::after {
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				content: '!';
+				top: calc(50% - 23px);
+				right: 27px;
+				width: 1.5rem;
+				height: 1.5rem;
+				background-color: clr('red', 400);
+				color: clr('light', 100);
+				border-radius: 50%;
+			}
 		}
 	}
 
 	input {
 		@extend %form-input;
 		width: 100%;
-		padding: 20px 15px;
+		padding: 0.875rem 1.25rem;
 		border-radius: $border-radius-2;
 		border: 1px solid #DEDEDE;
+
+		@media screen and (min-width: 1024px) {
+			padding-inline: 2rem;
+		}
 
 		&.invalid {
 			border: 2px solid clr('red', 400);
