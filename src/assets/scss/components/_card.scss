@@ -6,6 +6,8 @@
 
 .card {
 	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 	padding: $card-padding;
 	border-radius: $border-radius-1;
 }

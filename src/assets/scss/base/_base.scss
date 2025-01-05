@@ -32,3 +32,7 @@ body {
   @extend %error;
   color: clr('red', 400);
 }
+
+.foot-note {
+  @extend %foot-note;
+}
