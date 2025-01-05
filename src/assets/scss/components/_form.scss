@@ -47,6 +47,11 @@
 			padding-inline: 2rem;
 		}
 
+		&:focus, &:focus-visible {
+			outline: 2px solid clr('blue', 400); 
+			border-radius: $border-radius-2;
+		}
+
 		&.invalid {
 			border: 2px solid clr('red', 400);
 			color: clr('red', 400);
