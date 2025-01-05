@@ -5,14 +5,6 @@
 	.text-#{$weight} {
 		font-weight: #{$value};
 	}
-
-	@each $breakpoint, $breakpoint-value in $breakpoints {
-		@media screen and (min-width: #{$breakpoint-value}) {
-			@at-root .#{$breakpoint}:text-#{$weight} {
-				font-weight: #{$value};
-			}
-		}
-	}
 }
 
 // Generate font-style utility classes with responsive variants
@@ -20,27 +12,11 @@
 	.text-#{$style} {
 		font-style: #{$value};
 	}
-
-	@each $breakpoint, $breakpoint-value in $breakpoints {
-		@media screen and (min-width: #{$breakpoint-value}) {
-			@at-root .#{$breakpoint}:text-#{$style} {
-				font-style: #{$value};
-			}
-		}
-	}
 }
 
 // Generate text-align utility classes with responsive variants
 @each $align, $value in $text-aligns {
 	.text-#{$align} {
 		text-align: #{$value};
-	}
-
-	@each $breakpoint, $breakpoint-value in $breakpoints {
-		@media screen and (min-width: #{$breakpoint-value}) {
-			@at-root .#{$breakpoint}:text-#{$align} {
-				text-align: #{$value};
-			}
-		}
 	}
 }

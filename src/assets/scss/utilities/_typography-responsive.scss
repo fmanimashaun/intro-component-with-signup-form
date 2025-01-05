@@ -1,0 +1,34 @@
+@use '../abstract/variables' as *;
+
+// Generate font-weight utility classes with responsive variants
+@each $weight, $value in $font-weights {
+	@each $breakpoint, $breakpoint-value in $breakpoints {
+		@media screen and (min-width: #{$breakpoint-value}) {
+			@at-root .#{$breakpoint}-text-#{$weight} {
+				font-weight: #{$value};
+			}
+		}
+	}
+}
+
+// Generate font-style utility classes with responsive variants
+@each $style, $value in $font-styles {
+	@each $breakpoint, $breakpoint-value in $breakpoints {
+		@media screen and (min-width: #{$breakpoint-value}) {
+			@at-root .#{$breakpoint}-text-#{$style} {
+				font-style: #{$value};
+			}
+		}
+	}
+}
+
+// Generate text-align utility classes with responsive variants
+@each $align, $value in $text-aligns {
+	@each $breakpoint, $breakpoint-value in $breakpoints {
+		@media screen and (min-width: #{$breakpoint-value}) {
+			@at-root .#{$breakpoint}-text-#{$align} {
+				text-align: #{$value};
+			}
+		}
+	}
+}

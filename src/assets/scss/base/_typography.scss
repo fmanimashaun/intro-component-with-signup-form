@@ -1,5 +1,33 @@
-// @font-face {
-//   font-family: "Hanken Grotesk";
-//   src: url('@/assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
-//   font-style: normal;
-// }
+@font-face {
+	font-family: "Poppins";
+	src: url('@/assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url('@/assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url('@/assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url('@/assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url('@/assets/fonts/Poppins/Poppins-MediumItalic.ttf') format('truetype');
+	font-style: italic;
+	font-weight: 500;
+}

@@ -10,6 +10,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    // @ts-ignore
     htmlPurge(),
   ],
   build: {
