@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Mentor | Results summary component</title>
+  <script type="module" crossorigin src="/intro-component-with-signup-form/assets/js/index.js"></script>
+  <link rel="stylesheet" crossorigin href="/intro-component-with-signup-form/assets/css/index.css">
+</head>
+
+<body class="bg-red-400">
+  <div class="container">
+    <main class="main">
+      <div class="hero">
+        <div class="hero__left | text-center lg-text-left">
+          <h1 class="hero__left-title | text-light-100 text-bold">Learn to code by watching others</h1>
+          <p class="hero__left-body | text-light-100 text-medium">See how experienced developers solve problems in
+            real-time.
+            Watching scripted tutorials is great, but
+            understanding how developers think is invaluable. </p>
+        </div>
+        <div class="hero__right">
+          <div class="hero__right-title | bg-blue-400">
+            <h2 class="text-regular text-light-100 text-center">
+              <span class="text-bold">Try it free 7 days</span> then $20/mo. thereafter
+            </h2>
+          </div>
+          <div class="hero__right-form | card bg-light-100">
+            <form id="signup-form">
+              <div class="form-field">
+                <input class="text-semibold text-gray-500" type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                <span class="error-message"></span>
+              </div>
+            
+              <div class="form-field">
+                <input class="text-semibold text-gray-500" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+                <span class="error-message"></span>
+              </div>
+            
+              <div class="form-field">
+                <input class="text-semibold text-gray-500" type="email" name="email" id="email" placeholder="Email Address" required>
+                <span class="error-message"></span>
+              </div>
+            
+              <div class="form-field">
+                <input class="text-semibold text-gray-500" type="password" name="password" id="password" placeholder="Password" required>
+                <span class="error-message"></span>
+              </div>
+            
+              <button class="btn" type="submit">CLAIM YOUR FREE TRIAL</button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
