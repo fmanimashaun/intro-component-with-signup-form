@@ -7,13 +7,13 @@
 .hero {
 	display: flex;
 	flex-direction: column;
-	gap: 64px;
+	gap: 4rem;
 
 	@media screen and (min-width: 1024px) {
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		gap: 45px;
+		gap: 2.8125rem;
 	}
 
 	&__left {
@@ -45,7 +45,7 @@
 			max-inline-size: 36ch;
 			margin-inline: auto;
 
-			@media screen and (min-width: 768px) {
+			@media screen and (min-width: 1024px) {
 				max-inline-size: 65ch;
 				margin-inline: 0 auto;
 			}
@@ -56,20 +56,22 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
+		width: 100%;
+		max-width: 540px;
+		margin-inline: auto;
 
 		@media screen and (min-width: 1024px) {
 			flex-basis: 540px;
 		}
 
 		&-title {
-			@extend %heading-2;
-			padding-block: 18px;
-			border-radius: 10px;
-			box-shadow: 0 8px 0 rgba(clr("gray", 500), 0.15) ;
+			padding-block: 1.125rem;
+			padding-inline: 4rem;
+			border-radius: 0.625rem;
+			box-shadow: 0 0.5rem 0 rgba(clr("gray", 500), 0.15) ;
 
 			h2 {
-				max-inline-size: 25ch;
-				margin-inline: auto;
+				@extend %heading-2;
 			}
 
 		}
