@@ -34,6 +34,8 @@ Users should be able to:
 
 <img src="./screenshot/desktop.png" alt="Desktop Image" width="1440px">
 
+<img src="./screenshot/desktop-active.png" alt="Desktop Image" width="1440px">
+
 - Mobile
 
 <img src="./screenshot/mobile.png" alt="Mobile Image" width="375px">
@@ -57,33 +59,88 @@ Users should be able to:
 
 ### What I learned
 
-To dynamically add the data using the provided json data, I make use of code below to dynamically generate the score list items. Also, I use the reduce() method to get the total score and find the average by dividing my number of scores using he length method. I also use object destructuring to extract only the score value from each object.
+Clear all error when the input field get re-focused after submission. Javascript was essentially used to manage the form states.
+
+In the styling part, I break the UI into manageable components and use as many utilities classes as possible to reduce the amount of custom styling. However, I purge the final css of all unused utility classes to ensure the final css is as small as possible.
+
+```scss
+// Generate font-weight utility classes with responsive variants
+@each $weight, $value in $font-weights {
+	.text-#{$weight} {
+		font-weight: #{$value};
+	}
+}
+
+// Generate font-style utility classes with responsive variants
+@each $style, $value in $font-styles {
+	.text-#{$style} {
+		font-style: #{$value};
+	}
+}
+
+// Generate text-align utility classes with responsive variants
+@each $align, $value in $text-aligns {
+	.text-#{$align} {
+		text-align: #{$value};
+	}
+}
+
+// Generate font-weight utility classes with responsive variants
+@each $weight, $value in $font-weights {
+	@each $breakpoint, $breakpoint-value in $breakpoints {
+		@media screen and (min-width: #{$breakpoint-value}) {
+			@at-root .#{$breakpoint}-text-#{$weight} {
+				font-weight: #{$value};
+			}
+		}
+	}
+}
+
+// Generate font-style utility classes with responsive variants
+@each $style, $value in $font-styles {
+	@each $breakpoint, $breakpoint-value in $breakpoints {
+		@media screen and (min-width: #{$breakpoint-value}) {
+			@at-root .#{$breakpoint}-text-#{$style} {
+				font-style: #{$value};
+			}
+		}
+	}
+}
+
+// Generate text-align utility classes with responsive variants
+@each $align, $value in $text-aligns {
+	@each $breakpoint, $breakpoint-value in $breakpoints {
+		@media screen and (min-width: #{$breakpoint-value}) {
+			@at-root .#{$breakpoint}-text-#{$align} {
+				text-align: #{$value};
+			}
+		}
+	}
+}
+```
 
 ```ts
+// Add event listener on the form to remove invalid classes from all inputs when any input is focused
+formEl.addEventListener('focusin', (e) => {
+	// Check if the event target is an input
+	if (e.target instanceof HTMLInputElement) {
+		const inputs = formEl.querySelectorAll('input') as NodeListOf<HTMLInputElement>;
+		const errors = formEl.querySelectorAll('.error-message') as NodeListOf<HTMLElement>;
 
-// Create a variable to accumulate all list items
-let listItemsHTML = '';
+		// Loop through all input elements and remove invalid classes from all
+		inputs.forEach((input) => {
+			input.classList.remove('invalid');
+			if (input.parentElement) {
+				input.parentElement.classList.remove('invalid');
+			}
+		});
 
-data.forEach(({ category, score, icon }) => {
-  // Construct the HTML structure using template literals
-  listItemsHTML += `
-    <li class="card__summary-result ${category.toLowerCase()}">
-      <div class="card__summary-result-title">
-        <img class="card__summary-result-icon" src="${icon}" aria-hidden="true" alt="icon">
-        <h3 class="card__summary-result-name">${category}</h3>
-      </div>
-      <p class="card__summary-result-value"><span>${score}</span> / 100</p>
-    </li>
-  `;
+	// Update error messages on the form
+	errors.forEach((error) => {
+		error.innerText = '';
+	});
+	}
 });
-
-// Append all list items to the container at once
-resultsContainer.innerHTML = listItemsHTML;
-
-const totalScore = data.reduce((sum, { score }) => sum + score, 0);
-const averageScore = Math.round(totalScore / data.length);
-
-resultScore.innerText = `${averageScore}`;
 
 ```
 
